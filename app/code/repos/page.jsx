@@ -5,6 +5,9 @@ const fetchRepos = async () => {
   const data = await fetch(
     "https://api.github.com/users/develad/repos?sort=updated&order=desc",
   );
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  //   Wait 1 second
   const repos = await data.json();
   return repos;
 };
