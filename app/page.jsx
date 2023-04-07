@@ -21,3 +21,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// https://www.traversymedia.com/blog/next-js-13-crash-course-app-directory-server-components-more
