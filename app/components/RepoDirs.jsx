@@ -5,6 +5,11 @@ const fetchRepoContents = async (name) => {
   // Waiting for 3 seconds
   const response = await fetch(
     `https://api.github.com/repos/develad/${name}/contents`,
+    {
+      next: {
+        revalidate: 60, // 60 seconds
+      },
+    },
   );
   const contents = await response.json();
   return contents;
