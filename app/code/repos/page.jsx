@@ -30,15 +30,15 @@ const ReposPage = async () => {
               <p>{repo.description}</p>
               <div className='repo-details'>
                 <span>
-                  <FaStar />
+                  <FaStar color='gold' />
                   {repo.stargazers_count}
                 </span>
                 <span>
-                  <FaCodeBranch />
+                  <FaCodeBranch color='ForestGreen' />
                   {repo.forks_count}
                 </span>
                 <span>
-                  <FaEye />
+                  <FaEye color='CornflowerBlue' />
                   {repo.watchers_count}
                 </span>
               </div>
