@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import "./globals.css";
 import { Poppins, Fira_Code } from "next/font/google";
 
-const poppins = Fira_Code({
+const firaCode = Fira_Code({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={poppins.className}>
+      <body className={firaCode.className}>
         <Header />
         <main className='container'>{children}</main>
       </body>
