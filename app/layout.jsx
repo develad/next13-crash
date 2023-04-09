@@ -1,8 +1,8 @@
 import Header from "./components/Header";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Poppins, Fira_Code } from "next/font/google";
 
-const poppins = Poppins({
+const poppins = Fira_Code({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
