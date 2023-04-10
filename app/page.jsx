@@ -40,7 +40,9 @@ const HomePage = () => {
     // </div>
 
     <>
-      <h1>Welcome To Agency Media</h1>
+      <h1 style={{ textAlign: "center", margin: "1rem" }}>
+        Welcome To Agency Media
+      </h1>
       <CourseSearch getSearchResults={(results) => setCourses(results)} />
       <Courses courses={courses} />
     </>
