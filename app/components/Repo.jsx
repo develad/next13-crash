@@ -17,7 +17,11 @@ const Repo = async ({ name }) => {
   //   console.log(repo);
 
   return (
-    <>
+    <Link
+      href={repo.html_url}
+      target='_blank'
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
       <h2>{repo.name}</h2>
       <p>{repo.description}</p>
       <div className='card-stats'>
@@ -34,7 +38,7 @@ const Repo = async ({ name }) => {
           <span>{repo.watchers_count}</span>
         </div>
       </div>
-    </>
+    </Link>
   );
 };
 
