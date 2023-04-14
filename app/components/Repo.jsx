@@ -9,6 +9,7 @@ const fetchRepo = async (name) => {
     },
   });
   const repo = await response.json();
+  // console.log(repo);
   return repo;
 };
 
@@ -17,13 +18,30 @@ const Repo = async ({ name }) => {
   //   console.log(repo);
 
   return (
-    <Link
-      href={repo.html_url}
-      target='_blank'
-      style={{ textDecoration: "none", color: "inherit" }}
-    >
-      <h2>{repo.name}</h2>
+    <>
+      <Link
+        href={repo.html_url}
+        target='_blank'
+        style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+      >
+        <h2>{repo.name}</h2>
+      </Link>
       <p>{repo.description}</p>
+      {repo.homepage && (
+        <p>
+          Link To Site:
+          <Link
+            href={repo.homepage}
+            target='_blank'
+            style={{
+              textDecoration: "none",
+              color: "blue",
+            }}
+          >
+            {repo.homepage}
+          </Link>
+        </p>
+      )}
       <div className='card-stats'>
         <div className='card-stat'>
           <FaStar color='gold' />
@@ -38,7 +56,7 @@ const Repo = async ({ name }) => {
           <span>{repo.watchers_count}</span>
         </div>
       </div>
-    </Link>
+    </>
   );
 };
 

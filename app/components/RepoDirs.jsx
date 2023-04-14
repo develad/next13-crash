@@ -18,21 +18,26 @@ const fetchRepoContents = async (name) => {
 const RepoDirs = async ({ name }) => {
   const contents = await fetchRepoContents(name);
   const dirs = contents.filter((content) => content.type === "dir");
+  // console.log(dirs);
   return (
     <>
-      <h3>Directories</h3>
-      <ul>
-        {dirs.map((dir) => (
-          <li key={dir.path}>
-            <Link
-              href={`${dir._links.html}`}
-              target='_blank'
-            >
-              {dir.path}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {dirs.length !== 0 && (
+        <>
+          <h3>Directories</h3>
+          <ul>
+            {dirs.map((dir) => (
+              <li key={dir.path}>
+                <Link
+                  href={`${dir._links.html}`}
+                  target='_blank'
+                >
+                  {dir.path}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </>
   );
 };
